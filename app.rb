@@ -12,8 +12,14 @@ get '/shotgun' do
   "Shotgun is working! I'm proof of that!"
 end
 
-get '/cat' do
+get '/random_cat' do
   @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named_cat' do
+  params
+  @name = params[:name] + " " + params[:last_name]
   erb(:index)
 end
 
